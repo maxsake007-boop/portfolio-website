@@ -362,9 +362,18 @@ export function VerticalCoverflow({
                     </div>
 
                     {isCurrent && slide.url && slide.url !== "#" && (
-                      <div className="liquid-glass-button p-2 rounded-xl text-zinc-900 shadow-md shrink-0 pointer-events-auto">
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </div>
+                      <a
+                        href={slide.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onPointerDown={(e) => e.stopPropagation()}
+                        onClick={(e) => e.stopPropagation()}
+                        className="liquid-glass-button p-2 rounded-xl text-zinc-900 shadow-md shrink-0 pointer-events-auto cursor-pointer hover:scale-110 active:scale-95 transition-all group/btn hover:text-emerald-700 flex items-center justify-center"
+                        title="Открыть сайт проекта"
+                        aria-label="Открыть сайт проекта"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                      </a>
                     )}
                   </div>
                 </div>
